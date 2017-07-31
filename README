@@ -1,0 +1,54 @@
+itagar
+305392508
+Itai Tagar
+
+
+===================================
+=  README for ex1: Convex Hull    =
+===================================
+
+
+==================
+=  Files:        =
+==================
+Point.h
+Point.cpp
+PointSet.h
+PointSet.cpp
+ConvexHull.cpp
+PointSetBinaryOperations.cpp
+Makefile
+README
+
+==================
+=  Description:  =
+==================
+Both ConvexHull program and PointSetBinaryOperations program are using the Point and PointSet
+classes. These programs use only the interface given in the 'PointSet.h' file.
+
+Point Class:
+    Represent a single Point in the plane, with X and Y coordinates.
+    The Point holds several methods to perform operations that serve the PointSet Class,
+    for example the PolarAngle() which calculates the angle of a given Point with the Point
+    that called this method.
+    Even though these methods are used to serve the PointSet methods, it seems more proper to
+    implement them in the Point Class, because these operations are related to specific Point
+    and not the entire Set.
+
+PointSet Class:
+    The PointSet Class represent a Set which holds Points.
+    The Set itself is implemented as a private member of this Class, and the user has
+    no access to it.
+    The Set itself is an array of pointers to Points. It is a dynamic array, i.e. it's actual size
+    is changed during the addition operations (it only increase it's capacity but not decrease).
+    The PointSet allows to add new Points and remove Points (as a Set it does not allow duplicates).
+    The PointSet also allows to call several Sorting operations on itself, basically used in the
+    Convex Hull program.
+    The PointSet overloaded several operators which are demonstrated in the PointSetBinaryOperations
+    program.
+
+The ConvexHull program use PointSet in order to receive and store input from the user and then
+calculate the Convex Hull of the input.
+
+The PointSetBinaryOperations is just a simple demonstration of the several operators that was
+overloaded in the PointSet class.
